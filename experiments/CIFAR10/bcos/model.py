@@ -7,7 +7,6 @@ from data.data_transforms import AddInverse
 from experiment_utils import get_arguments
 from modules.bcosconv2d import BcosConv2d
 from modules.utils import FinalLayer, MyAdaptiveAvgPool2d
-from training.training_utils import start_training
 import os
 
 
@@ -71,4 +70,5 @@ def get_optimizer(model, base_lr):
 
 if __name__ == "__main__":
     cmd_args = get_arguments()
+    from training.training_utils import start_training
     start_training(cmd_args, get_model, get_optimizer)

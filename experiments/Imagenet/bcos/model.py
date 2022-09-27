@@ -12,7 +12,6 @@ from torch.hub import download_url_to_file
 from models.bcos.resnet import resnet34
 from models.bcos.vgg import vgg11
 from modules.utils import FinalLayer, MyAdaptiveAvgPool2d
-from training.training_utils import start_training
 
 archs = {
     "densenet_121": densenet121,
@@ -90,4 +89,5 @@ def get_optimizer(model, base_lr):
 
 if __name__ == "__main__":
     cmd_args = get_arguments()
+    from training.training_utils import start_training
     start_training(cmd_args, get_model, get_optimizer)

@@ -2,7 +2,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from torchvision.models.utils import load_state_dict_from_url
+try:
+    from torchvision.models.utils import load_state_dict_from_url
+except ImportError:
+    from torch.hub import load_state_dict_from_url
 from typing import Union, List, Dict, Any, cast
 from modules.bcosconv2d import BcosConv2d
 
