@@ -1,7 +1,7 @@
 from torch import nn
 from torch.nn.parallel import DistributedDataParallel
 
-from collections import Iterable
+from typing import Iterable
 
 
 class LossDict(dict):
